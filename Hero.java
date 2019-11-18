@@ -1,30 +1,36 @@
-public class Hero {
+public class Hero implements Comparable<Hero>{
 
-    // attributs
-    private String name;
+    // attributes
+    private String Name;
     private int age;
 
-    // constructeurs
-    public Hero(String name, int age) {
-        this.name = name;
+    // constructors
+    public Hero(String Name, int age) {
+        this.Name = Name;
         this.age = age;
     }
 
-    // accesseurs (getters)
+    // getters
     public String getName() {
-        return name;
+        return Name;
     }
-
     public int getAge() {
         return age;
     }
 
-    // mutateurs (setters)
-    public void setName(String name) {
-        this.name = name;
+    // setters
+    public void setName(String Name) {
+        this.Name = Name;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public int compareTo(Hero o) {
+        return this.Name.compareTo(o.getName()); // FOR STRING
+        // return this.getAge() - o.getAge();    // FOR INTEGER
+    }
+
+
 }
